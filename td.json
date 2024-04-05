@@ -1,13 +1,13 @@
 {
-    "family": "dev-yt-td",
+    "family": "td-yt",
     "containerDefinitions": [
         {
-            "name": "yt-ecr",
+            "name": "yt",
             "image": "590183663006.dkr.ecr.ap-south-2.amazonaws.com/yt-ecr:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "yt-ecr-3000-tcp",
+                    "name": "yt-3000-tcp",
                     "containerPort": 3000,
                     "hostPort": 3000,
                     "protocol": "tcp",
@@ -26,10 +26,10 @@
     "executionRoleArn": "arn:aws:iam::590183663006:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "requiresCompatibilities": [
-        "EC2"
+        "FARGATE"
     ],
     "cpu": "1024",
-    "memory": "1024",
+    "memory": "2048",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
