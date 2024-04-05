@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+     environment {
+     SCANNER_HOME=tool 'sonar-scanner'
+     AWS_ACCOUNT_ID="590183663006"
+     AWS_DEFAULT_REGION="ap-south-2" 
+     IMAGE_REPO_NAME="yt-ecr"
+     IMAGE_TAG="latest"
+     REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+ }
+    tools{
+        nodejs 'node16'
+        jdk 'jdk17'
+    }
+
+    stages {
+        stage('checkout') {
+            steps {
+                 git branch: 'main', url: 'https://github.com/DoesntMatterPrivateLimited/pk_youtube.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+        // stage("Sonarqube Analysis "){
+        //     steps{
+        //         withSonarQubeEnv('sonar-server') {
+        //             sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=youtube \
+        //             -Dsonar.projectKey=youtube '''
+        //         }
+        //     }
+        // }
+       stage('Logging plugin') {
+          steps {
+           script { 
+        withDockerRegistry(credentialsId: 'ecr:ap-south-2:aws-cred', url: 'https://590183663006.dkr.ecr.ap-south-2.amazonaws.com/') {
+    
+   }
+}}}
+    
+     stage('Building image') {
+           steps{
+           script {
+                  dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
+            }
+          }
+        }
+        stage('Pushing to ECR') {
+             steps{ 
+             script {
+                withDockerRegistry(credentialsId: 'ecr:ap-south-2:aws-cred', url: 'https://590183663006.dkr.ecr.ap-south-2.amazonaws.com/'){
+                 sh "docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}"
+                }
+                
+             }
+            }
+        }
+    }
+   
+}
+
+
