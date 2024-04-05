@@ -1,0 +1,37 @@
+{
+    "family": "dev-yt-td",
+    "containerDefinitions": [
+        {
+            "name": "yt-ecr",
+            "image": "590183663006.dkr.ecr.ap-south-2.amazonaws.com/yt-ecr:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "yt-ecr-3000-tcp",
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "systemControls": []
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::590183663006:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "512",
+    "memory": "512",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
