@@ -1,5 +1,5 @@
 {
-    "family": "pk-td",
+    "family": "pk-td-11",
     "containerDefinitions": [
         {
             "name": "httpd",
