@@ -1,15 +1,15 @@
 {
-    "family": "td-yt",
+    "family": "pk-td",
     "containerDefinitions": [
         {
-            "name": "yt",
-            "image": "590183663006.dkr.ecr.ap-south-2.amazonaws.com/yt-ecr:latest",
+            "name": "httpd",
+            "image": "httpd:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "yt-3000-tcp",
-                    "containerPort": 3000,
-                    "hostPort": 3000,
+                    "name": "nginx-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
@@ -24,12 +24,12 @@
         }
     ],
     "executionRoleArn": "arn:aws:iam::590183663006:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
+    "networkMode": "bridge",
     "requiresCompatibilities": [
-        "FARGATE"
+        "EC2"
     ],
-    "cpu": "1024",
-    "memory": "2048",
+    "cpu": "511",
+    "memory": "511",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
