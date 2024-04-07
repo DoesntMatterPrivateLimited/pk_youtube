@@ -2,13 +2,13 @@
     "family": "pk-td",
     "containerDefinitions": [
         {
-            "name": "httpd",
-            "image": "httpd:latest",
+            "name": "youtube",
+            "image": "590183663006.dkr.ecr.ap-south-2.amazonaws.com/yt-ecr:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "nginx-80-tcp",
-                    "containerPort": 80,
+                    "name": "youtube",
+                    "containerPort": 3000,
                     "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
@@ -28,8 +28,8 @@
     "requiresCompatibilities": [
         "EC2"
     ],
-    "cpu": "511",
-    "memory": "511",
+    "cpu": "1024",
+    "memory": "1024",
     "revision": 7,
     "status": "ACTIVE",
     "runtimePlatform": {
