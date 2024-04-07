@@ -2,12 +2,12 @@
     "family": "pk-td",
     "containerDefinitions": [
         {
-            "name": "youtube",
+            "name": "httpd",
             "image": "590183663006.dkr.ecr.ap-south-2.amazonaws.com/yt-ecr:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "youtube",
+                    "name": "httpd",
                     "containerPort": 3000,
                     "hostPort": 80,
                     "protocol": "tcp",
