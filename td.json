@@ -8,8 +8,8 @@
             "portMappings": [
                 {
                     "name": "youtube",
-                    "containerPort": 3000,
-                    "hostPort": 3000,
+                    "containerPort": 3080,
+                    "hostPort": 3080,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
