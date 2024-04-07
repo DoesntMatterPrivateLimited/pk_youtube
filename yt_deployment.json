@@ -1,10 +1,10 @@
 {
-  "applicationName": "AppECS-kg-kg-svc",
-  "deploymentGroupName": "DgpECS-kg-kg-svc",
+  "applicationName": "AppECS-yt-yt-svc",
+  "deploymentGroupName": "DgpECS-yt-yt-svc",
   "revision": {
     "revisionType": "AppSpecContent",
     "appSpecContent": {
-      "content": "{\"version\":1,\"Resources\":[{\"TargetService\":{\"Type\":\"AWS::ECS::Service\",\"Properties\":{\"TaskDefinition\":\"TASK_DEF_ARN\",\"LoadBalancerInfo\":{\"ContainerName\":\"httpd\",\"ContainerPort\":80}}}}]}"
+      "content": "{\"version\":1,\"Resources\":[{\"TargetService\":{\"Type\":\"AWS::ECS::Service\",\"Properties\":{\"TaskDefinition\":\"TASK_DEF_ARN\",\"LoadBalancerInfo\":{\"ContainerName\":\"youtube\",\"ContainerPort\":3000}}}}]}"
     }
   }
 }
