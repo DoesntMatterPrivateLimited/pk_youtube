@@ -1,10 +1,9 @@
 {
-    "family": "td-yt",
+    "family": "sh-td",
     "containerDefinitions": [
         {
             "name": "youtube",
             "image": "590183663006.dkr.ecr.ap-south-2.amazonaws.com/yt-ecr:latest",
-            "cpu": 0,
             "portMappings": [
                 {
                     "name": "youtube",
