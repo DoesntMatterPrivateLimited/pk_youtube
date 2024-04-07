@@ -1,6 +1,6 @@
 {
-  "applicationName": "AppECS-yt-yt-svc",
-  "deploymentGroupName": "DgpECS-yt-yt-svc",
+  "applicationName": "AppECS-new-new-svc",
+  "deploymentGroupName": "DgpECS-new-new-svc",
   "revision": {
     "revisionType": "AppSpecContent",
     "appSpecContent": {
