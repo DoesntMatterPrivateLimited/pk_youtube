@@ -4,7 +4,7 @@
   "revision": {
     "revisionType": "AppSpecContent",
     "appSpecContent": {
-      "content": "{\"version\":1,\"Resources\":[{\"TargetService\":{\"Type\":\"AWS::ECS::Service\",\"Properties\":{\"TaskDefinition\":\"TASK_DEF_ARN\",\"LoadBalancerInfo\":{\"ContainerName\":\"youtube\",\"ContainerPort\":3000}}}]}"
+      "content": "{\"version\":1,\"Resources\":[{\"TargetService\":{\"Type\":\"AWS::ECS::Service\",\"Properties\":{\"TaskDefinition\":\"TASK_DEF_ARN\",\"LoadBalancerInfo\":{\"ContainerName\":\"youtube\",\"ContainerPort\":3000},}}]}"
 
     }
   }
